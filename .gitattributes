@@ -1,0 +1,23 @@
+# ── Line endings ──────────────────────────────────────────────────────────────
+# Enforce LF line endings in the repository for all text files.
+* text=auto eol=lf
+
+# ── Shell scripts: always LF ──────────────────────────────────────────────────
+*.sh text eol=lf
+
+# ── Binary files: no line-ending conversion ───────────────────────────────────
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.gguf binary
+*.bin binary
+
+# ── Lock files: treat as binary to avoid merge conflicts ──────────────────────
+pnpm-lock.yaml -diff
+
+# ── Generated files: mark as not for diffing ──────────────────────────────────
+*.tsbuildinfo -diff
+dist/** -diff linguist-generated=true

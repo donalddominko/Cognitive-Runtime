@@ -1,0 +1,17 @@
+# CODEOWNERS
+# Defines code owners for pull request review routing.
+# Format: <path pattern> <owner(s)>
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything
+* @donalddominko
+
+# Core runtime logic — requires careful review
+packages/runtime/src/dag-executor.ts    @donalddominko
+packages/runtime/src/meta-planner/      @donalddominko
+packages/runtime/src/memory/            @donalddominko
+packages/contracts/src/                 @donalddominko
+
+# Storage and migrations — schema changes require migration files
+packages/storage/src/schema.ts          @donalddominko
+apps/api/migrations/                    @donalddominko
