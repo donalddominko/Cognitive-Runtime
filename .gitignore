@@ -1,0 +1,87 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+
+# ── Build output ──────────────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+
+# ── Environment files ─────────────────────────────────────────────────────────
+# Do NOT commit .env — it may contain real credentials.
+# Commit .env.example instead.
+.env
+.env.*
+!.env.example
+
+# ── Log files ─────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+pnpm-debug.log*
+install.log
+logs/
+.smoke-logs/
+
+# ── Backup and temporary files ────────────────────────────────────────────────
+*.bak
+*.bak.*
+*.bak-*
+*.bak_*
+*.backup
+*.tmp
+*.temp
+*.ARCHIVED-*
+tmp/
+temp/
+
+# ── Database files ────────────────────────────────────────────────────────────
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# ── Qdrant local storage (if running Qdrant outside Docker) ──────────────────
+qdrant_storage/
+
+# ── LLM model files ──────────────────────────────────────────────────────────
+*.gguf
+*.bin
+models/
+.local/
+
+# ── Test and coverage output ──────────────────────────────────────────────────
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# ── OS junk ───────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ── Editor junk ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+.project
+.classpath
+
+# ── Docker overrides (local only) ─────────────────────────────────────────────
+docker-compose.override.yml
+
+# ── Screenshots and generated exports ────────────────────────────────────────
+screenshots/
+exports/
+
+# ── Claude editor state ───────────────────────────────────────────────────────
+.claude/settings.local.json
+
+# ── Handoff / temp transfer directories ──────────────────────────────────────
+tmpcr-handoff/

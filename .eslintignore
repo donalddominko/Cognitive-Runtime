@@ -1,0 +1,12 @@
+# Generated build output — never lint compiled files
+dist/
+build/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Dependencies
+node_modules/
+
+# Vite generated env types
+apps/web/src/vite-env.d.ts
