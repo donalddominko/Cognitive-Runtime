@@ -92,7 +92,7 @@ cognitive-runtime/
 
 ```bash
 cp .env.example .env          # defaults work for Docker
-docker compose up --build -d  # build and start all 7 services
+docker compose up --build -d  # build and start all 8 services
 ```
 
 Wait ~60–90 seconds for the llama model to load, then:

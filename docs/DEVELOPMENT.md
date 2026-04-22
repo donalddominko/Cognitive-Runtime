@@ -22,7 +22,7 @@ cd cognitive-runtime
 cp .env.example .env
 # Edit .env if needed (defaults work for Docker)
 
-# Build and start all 7 services
+# Build and start all 8 services
 docker compose up --build -d
 
 # Wait for the stack to be healthy (takes ~60–90s for llama to load the model)
@@ -99,6 +99,67 @@ Copy `.env.example` to `.env`. Key variables:
 | `WORKER_HEARTBEAT_MS` | Worker heartbeat interval | `30000` (30s) |
 
 Each app also has its own `.env.example` in `apps/api/` and `apps/web/`.
+
+---
+
+## Feature Flags (Off by Default)
+
+Three environment variables are `false` by default because they activate Phase 6/7 features that depend on each other and on accumulated runtime data. Enabling them without understanding the dependencies produces no visible effect or unexpected blocked runs.
+
+---
+
+### `ENABLE_REPLANNING` — Phase 6 Meta-Planner
+
+**What it does:** Before every run, the Meta-Planner reads episodic (M1) and procedural (M3) memory, scores candidate DAGs using similarity + trust signals, and selects the best execution plan (REUSE / MODIFY / SYNTHESIZE). Without it, every run uses the hardcoded default 4-node DAG regardless of task type.
+
+**Why it's off by default:** The planner only produces value after M3 procedural memory is populated with successful prior runs. On a fresh install it will always fall back to the default DAG anyway — the overhead with no benefit.
+
+**When to enable:** After the system has processed enough runs to accumulate procedural templates, or when you want to observe and test the planning pipeline.
+
+**What to expect when enabled:** The following events appear in `/runs/:runId/events` on every run:
+- `META_PLANNER_STARTED` → `META_PLANNER_CONTEXT_RETRIEVED` → `META_PLANNER_CANDIDATES_BUILT` → `META_PLANNER_DECISION_MADE`
+- On failure: `META_PLANNER_FALLBACK_USED` (system recovers automatically, default DAG is used)
+
+---
+
+### `ENABLE_POLICY_GATE` — Phase 7 Policy Evaluation
+
+**What it does:** Before DAG execution, every run passes through a deterministic policy gate. The gate classifies the DAG's risk level by evaluating a set of built-in rules against the DAG type and node kinds — no LLM involved. It emits a `POLICY_VERDICT` of `allowed`, `blocked`, or `require_review`. A `CRITICAL` verdict hard-stops the run.
+
+**Why it's off by default:** In a local dev setup, blocked runs are disruptive and confusing. The gate is designed for environments where governance enforcement matters.
+
+**When to enable:** When testing the governance pipeline, when running the Phase 7 smoke tests (`smoke-phase7-policy.sh`), or before any deployment intended to handle real workloads.
+
+**What to expect when enabled:** Every run emits `POLICY_GATE_STARTED` and `POLICY_VERDICT`. Runs involving code-change DAG node kinds or `ENABLE_CODE_CHANGE_WORKFLOW=false` will be blocked by the `BLOCK_CODE_CHANGE_IF_DISABLED` rule.
+
+---
+
+### `ENABLE_CODE_CHANGE_WORKFLOW` — Phase 7 Code-Change DAG
+
+**What it does:** Unlocks a second DAG path — the sandboxed code-change workflow — which the Meta-Planner can select when a task requires code modification. This DAG adds 6 nodes: `CODEBASE_ANALYZE → PATCH_PLAN → PATCH_APPLY_SIMULATED → BUILD_VERIFY → PATCH_REVIEW → PERSIST_ASSISTANT_MESSAGE`. All operations are fully simulated — no real file mutations or git operations occur.
+
+**Why it's off by default:** This flag only has effect when `ENABLE_REPLANNING=true` is also set (so the Meta-Planner can select the code-change DAG). Without replanning enabled, the code-change path is never reached. Additionally, when `ENABLE_POLICY_GATE=true`, the gate blocks code-change DAGs unless this flag is explicitly on.
+
+**When to enable:** Set together with `ENABLE_REPLANNING=true` and `ENABLE_POLICY_GATE=true` to exercise the full Phase 7 pipeline. Use the smoke test `scripts/smoke-phase7-codeflow.sh` to verify end-to-end behavior.
+
+**What to expect when enabled:** Runs that trigger the code-change path will show extended event traces with the 6 additional node events. The run trace viewer in the Web UI will display all node states.
+
+---
+
+**Recommended test order:**
+```bash
+# 1. Enable replanning only
+ENABLE_REPLANNING=true
+
+# 2. Add policy gate
+ENABLE_REPLANNING=true
+ENABLE_POLICY_GATE=true
+
+# 3. Full Phase 7
+ENABLE_REPLANNING=true
+ENABLE_POLICY_GATE=true
+ENABLE_CODE_CHANGE_WORKFLOW=true
+```
 
 ---
 
