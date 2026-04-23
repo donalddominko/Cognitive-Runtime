@@ -1,8 +1,42 @@
 # Cognitive Runtime
 
-A TypeScript monorepo implementing an append-only, event-sourced AI agent runtime. The system executes structured DAG (Directed Acyclic Graph) task plans using a local Qwen 2.5 Coder 3B language model, with a full memory plane, reward/trust scoring, deterministic Meta-Planner, and Phase 7 production hardening features. It is currently intended as an internal reference implementation and research platform.
+Cognitive Runtime is a deterministic execution engine for building structured AI systems.
+
+Instead of relying on fragile prompt chains, it provides a runtime for:
+- directed execution (DAGs)
+- memory layers (M0–M3)
+- reward and trust systems
+- meta-planning and policy control
+
+Everything is append-only, event-sourced, auditable, and replayable.
+
+This is not a chatbot framework — it is a system for controlled cognition.
 
 > **Status: Private / Pre-release.** This project is feature-complete through Phase 7. Licensed under CC BY-NC-SA 4.0 — non-commercial use only. See the [License](#license) section below.
+
+---
+
+## Why Cognitive Runtime Exists
+
+Most AI systems today are:
+- non-deterministic
+- difficult to debug
+- impossible to audit
+- tightly coupled to prompt behavior
+
+They work — until they don't.
+
+Cognitive Runtime was built to treat AI as a system rather than a conversation.
+
+It introduces:
+- explicit execution graphs instead of implicit reasoning
+- structured memory instead of hidden context
+- measurable outcomes instead of subjective outputs
+- auditable decisions instead of opaque model behavior
+
+The goal is simple:
+
+**Build AI systems that can be understood, controlled, and trusted.**
 
 ---
 
@@ -254,11 +288,23 @@ This repository is feature-complete through Phase 7. It is in packaging/hardenin
 
 ## License
 
-**Cognitive Runtime © 2026 by Donald Dominko**  
-Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Cognitive Runtime © 2026 by Donald Dominko  
+Licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA 4.0)**.
+
+You are free to:
+- use, study, and modify the code
+- share and adapt it with proper attribution
+
+Under the following conditions:
+- **Non-commercial use only** — this project may not be used for commercial purposes
+- **Share alike** — derivatives must be distributed under the same license
+
+For commercial licensing or other use cases, please contact the author.
 
 **Status: Private / Pre-release**
 
-This project is licensed for **non-commercial use only**. You may share and adapt it with attribution, but commercial use is prohibited without explicit written permission from the author.
-
 See [LICENSE.md](./LICENSE.md) for the full license text.
+
+---
+
+This project is a reference implementation of a cognitive runtime system.
