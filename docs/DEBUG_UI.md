@@ -164,6 +164,18 @@ M1: {n}   M2: {n}   M3: {n}
 
 This is the **only input in the entire debug UI** that accepts an Enter-key submission.
 
+Enter any natural language phrase describing what you want to find — the search runs across all three memory tiers simultaneously. Examples:
+
+| Query | What it finds |
+|---|---|
+| `authentication error` | Episodes and procedures related to auth failures |
+| `how to handle retries` | Procedural memory about retry logic |
+| `qwen response timeout` | Episodes where the LLM call timed out |
+| `code change workflow` | Anything related to the code-change DAG path |
+| `reward score low` | Episodes where the reward agent returned a poor score |
+
+The search returns the top 5 results per tier (`top_k=5`). If all three tiers return zero results, the system has not yet accumulated enough run history — run more tasks through the chat and try again.
+
 Results are grouped by tier and truncated to 60 characters:
 
 ```
