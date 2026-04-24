@@ -111,6 +111,7 @@ cognitive-runtime/
 | [docs/META_PLANNER.md](./docs/META_PLANNER.md) | Planning pipeline, modes, scoring, constraints |
 | [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md) | Prerequisites, local dev, env vars, build commands |
 | [docs/SMOKE_TESTS.md](./docs/SMOKE_TESTS.md) | All smoke test descriptions and how to run them |
+| [docs/DEBUG_UI.md](./docs/DEBUG_UI.md) | Dev UI debug panels: Event Trace, DAG State, Phase 7, Meta-Planner, Memory |
 
 ---
 

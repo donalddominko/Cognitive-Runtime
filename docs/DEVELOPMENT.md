@@ -34,6 +34,7 @@ docker compose ps
 #   http://localhost:3000
 # Web UI (Vite dev server) is available at:
 #   http://localhost:5173
+# Debug panels (DEV_MODE only) are documented at docs/DEBUG_UI.md
 # Qdrant dashboard:
 #   http://localhost:6333/dashboard
 ```
@@ -68,6 +69,7 @@ pnpm dev
 cd apps/web
 pnpm dev
 # Visit http://localhost:5173
+# Debug panels are only visible here — see docs/DEBUG_UI.md
 ```
 
 ---
