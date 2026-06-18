@@ -12,7 +12,7 @@ Everything is append-only, event-sourced, auditable, and replayable.
 
 This is not a chatbot framework — it is a system for controlled cognition.
 
-> **Status: Private / Pre-release.** This project is feature-complete through Phase 7. Licensed under CC BY-NC-SA 4.0 — non-commercial use only. See the [License](#license) section below.
+> This project is feature-complete through Phase 7. Licensed under the GNU AGPL-3.0 — see the [License](#license) section below.
 
 ---
 
@@ -289,22 +289,21 @@ This repository is feature-complete through Phase 7. It is in packaging/hardenin
 
 ## License
 
-Cognitive Runtime © 2026 by Donald Dominko  
-Licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA 4.0)**.
+Cognitive Runtime © 2026 Donald Dominko  
+Licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
 You are free to:
 - use, study, and modify the code
-- share and adapt it with proper attribution
+- share and redistribute it
 
 Under the following conditions:
-- **Non-commercial use only** — this project may not be used for commercial purposes
-- **Share alike** — derivatives must be distributed under the same license
+- **Copyleft** — derivative works must be released under the AGPL-3.0
+- **Network use is distribution** — if you run a modified version to provide a service over a network, you must offer the complete corresponding source of your modified version to its users (AGPL §13)
+- **Preserve notices** — keep the license and attribution intact
 
-For commercial licensing or other use cases, please contact the author.
+For licensing under other terms (including a commercial/proprietary license), please contact the author.
 
-**Status: Private / Pre-release**
-
-See [LICENSE.md](./LICENSE.md) for the full license text.
+See [LICENSE](./LICENSE) for the full license text.
 
 ---
 

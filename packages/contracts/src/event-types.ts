@@ -1,5 +1,5 @@
-// Cognitive Runtime © 2026 by Donald Dominko
-// Licensed under CC BY-NC-SA 4.0
+// SPDX-License-Identifier: AGPL-3.0-only
+// Cognitive Runtime © 2026 Donald Dominko
 // Author: Donald Dominko | https://www.linkedin.com/in/donald-dominko/
 
 // packages/contracts/src/event-types.ts

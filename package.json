@@ -1,6 +1,7 @@
 {
   "name": "cognitive-runtime",
   "version": "1.0.0",
+  "license": "AGPL-3.0-only",
   "private": true,
   "description": "Cognitive Runtime - Internal AI Tool with Qwen 2.5 Coder",
   "scripts": {

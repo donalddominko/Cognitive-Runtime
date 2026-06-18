@@ -1,4 +1,4 @@
-<!-- Cognitive Runtime © 2026 by Donald Dominko | CC BY-NC-SA 4.0 -->
+<!-- SPDX-License-Identifier: AGPL-3.0-only | Cognitive Runtime © 2026 Donald Dominko -->
 
 # Release Checklist
 
@@ -18,14 +18,14 @@
 - [ ] No duplicate `LICENSE.md` files
 
 ### Licensing & Attribution
-- [ ] `LICENSE.md` present at repo root (CC BY-NC-SA 4.0)
+- [ ] `LICENSE` present at repo root (AGPL-3.0-only)
 - [ ] License headers present in all TS/TSX source files
 - [ ] License headers present in all shell scripts
 - [ ] License header present in CSS file
 - [ ] Attribution comment in Markdown docs (ARCHITECTURE, META_PLANNER, MEMORY_MODEL)
 - [ ] `README.md` includes Author section with LinkedIn link
 - [ ] `README.md` links to https://cognitiveruntime.net
-- [ ] `README.md` license section references CC BY-NC-SA 4.0
+- [ ] `README.md` license section references AGPL-3.0
 - [ ] `README.md` status shows "Private / Pre-release"
 
 ### Ownership & Governance
@@ -72,4 +72,4 @@
 
 ---
 
-*Non-commercial use only. See [LICENSE.md](LICENSE.md) for terms.*
+*Licensed under the GNU AGPL-3.0. See [LICENSE](LICENSE) for terms.*

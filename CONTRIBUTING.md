@@ -1,4 +1,4 @@
-<!-- Cognitive Runtime © 2026 by Donald Dominko | CC BY-NC-SA 4.0 -->
+<!-- SPDX-License-Identifier: AGPL-3.0-only | Cognitive Runtime © 2026 Donald Dominko -->
 
 # Contributing
 
@@ -61,6 +61,22 @@ chore: tighten .gitignore for backup files
 
 ---
 
+## Signing the CLA
+
+Contributing requires signing the Contributor License Agreement (CLA). Under the CLA
+you **keep copyright** in your contribution but grant the project owner a perpetual,
+irrevocable, sublicensable right to use and **relicense** it (including under
+commercial terms). See [CLA.md](./CLA.md) for the full text.
+
+Signing is automated: when you open your first pull request, the CLA Assistant bot
+comments on it. To sign, reply on the PR with:
+
+> I have read the CLA Document and I hereby sign the CLA
+
+Your PR cannot be merged until the CLA check passes.
+
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license as this project (CC BY-NC-SA 4.0 — see [LICENSE.md](./LICENSE.md)).
+By contributing, you agree that your contributions are licensed to the project and
+its users under the **GNU AGPL-3.0** (see [LICENSE](./LICENSE)), and that the project
+owner may additionally relicense them as described in [CLA.md](./CLA.md).

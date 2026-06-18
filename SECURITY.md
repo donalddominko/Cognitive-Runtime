@@ -1,4 +1,4 @@
-<!-- Cognitive Runtime © 2026 by Donald Dominko | CC BY-NC-SA 4.0 -->
+<!-- SPDX-License-Identifier: AGPL-3.0-only | Cognitive Runtime © 2026 Donald Dominko -->
 
 # Security Policy
 

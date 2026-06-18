@@ -1,4 +1,4 @@
-<!-- Cognitive Runtime © 2026 by Donald Dominko | CC BY-NC-SA 4.0 -->
+<!-- SPDX-License-Identifier: AGPL-3.0-only | Cognitive Runtime © 2026 Donald Dominko -->
 
 # Code of Conduct
 
@@ -31,4 +31,4 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 ---
 
-*Cognitive Runtime is a private, pre-release project. Non-commercial use only. See [LICENSE.md](LICENSE.md).*
+*Cognitive Runtime is licensed under the GNU AGPL-3.0. See [LICENSE](LICENSE).*
