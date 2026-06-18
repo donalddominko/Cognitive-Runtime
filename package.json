@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "AGPL-3.0-only",
   "private": true,
+  "packageManager": "pnpm@10.29.1",
   "description": "Cognitive Runtime - Internal AI Tool with Qwen 2.5 Coder",
   "scripts": {
     "dev": "pnpm --parallel --stream -r dev",
