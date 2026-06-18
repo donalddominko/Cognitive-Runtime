@@ -15,6 +15,6 @@ export * from './events.js';        // RunEvent union, data schemas, createRunEv
 export * from './api-dtos.js';      // request/response DTOs for the Fastify API
 export * from './dag.js';           // DAG spec, node kinds, run/node status enums
 export * from './reward.js';        // Phase 4: RewardSignals, RoutingDecision, 4 event data types
-export * from './memory.js';        // Phase 5: M0-M3 schemas, memory DTOs, 6 event data types
+export * from './memory.js';        // Phase 5: M1-M3 memory layers (+ M0 transient tier) schemas, memory DTOs, 6 event data types
 export * from './meta-planner.js';  // Phase 6: Meta-Planner schemas, 8 event data types
 export * from './phase7.js';        // Phase 7: Phase7Config, policy, code-change, 15 event data types

@@ -3,7 +3,8 @@
 // Author: Donald Dominko | https://www.linkedin.com/in/donald-dominko/
 
 // packages/contracts/src/memory.ts
-// Phase 5: Memory Plane v1 — Zod schemas and DTOs for M0–M3 memory tiers.
+// Phase 5: Memory Plane v1 — Zod schemas and DTOs for the M1–M3 memory layers
+// (plus the transient M0 working-context/cache tier).
 // All memory contracts live here; validated at every API and storage boundary.
 
 import { z } from 'zod';                        // runtime schema validation

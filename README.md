@@ -4,7 +4,7 @@ Cognitive Runtime is a deterministic execution engine for building structured AI
 
 Instead of relying on fragile prompt chains, it provides a runtime for:
 - directed execution (DAGs)
-- memory layers (M0–M3)
+- memory layers (M1–M3)
 - reward and trust systems
 - meta-planning and policy control
 
