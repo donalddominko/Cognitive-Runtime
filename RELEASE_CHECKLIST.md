@@ -5,7 +5,7 @@
 **Project:** Cognitive Runtime  
 **Author:** Donald Dominko — [LinkedIn](https://www.linkedin.com/in/donald-dominko/)  
 **Site:** https://cognitiveruntime.net  
-**Status:** Private / Pre-release
+**Status:** Public / Pre-release
 
 ---
 
@@ -26,7 +26,7 @@
 - [ ] `README.md` includes Author section with LinkedIn link
 - [ ] `README.md` links to https://cognitiveruntime.net
 - [ ] `README.md` license section references AGPL-3.0
-- [ ] `README.md` status shows "Private / Pre-release"
+- [ ] `README.md` reflects public AGPL-3.0 licensing (no "private" or "non-commercial" language)
 
 ### Ownership & Governance
 - [ ] `.github/CODEOWNERS` exists and is valid

@@ -125,7 +125,13 @@ cognitive-runtime/
 
 ## Quick Start (Docker)
 
+> **New here?** See the [Development Guide](docs/DEVELOPMENT.md) for full setup — prerequisites (Node, pnpm, Docker, Git) and how to clone the repository.
+
 ```bash
+# Clone the repository (see docs/DEVELOPMENT.md for details)
+git clone https://github.com/donalddominko/Cognitive-Runtime.git
+cd Cognitive-Runtime
+
 cp .env.example .env          # defaults work for Docker
 docker compose up --build -d  # build and start all 8 services
 ```
