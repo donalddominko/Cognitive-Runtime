@@ -53,14 +53,16 @@ if [ -z "${bad_tokens}" ]; then
   exit 3
 fi
 
-pattern="$(
-printf '%s\n' "${bad_tokens}" | python3 - <<'PY'
+# NB: use `python3 -c` (not `python3 - <<'PY'`) so the token list piped in on
+# stdin is actually read. With a heredoc, `<<'PY'` redirects stdin to the heredoc
+# body, shadowing the pipe — sys.stdin reads nothing, the token list is empty, and
+# the pattern collapses to `\b()\b`, which matches every line of every file.
+pattern="$(printf '%s\n' "${bad_tokens}" | python3 -c '
 import re, sys
 ts = [line.strip() for line in sys.stdin if line.strip()]
 ts.sort(key=len, reverse=True)
 print(r"\b(" + "|".join(re.escape(t) for t in ts) + r")\b")
-PY
-)"
+')"
 
 cd "${ROOT}"
 
